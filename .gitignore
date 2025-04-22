@@ -1,0 +1,42 @@
+
+# Python-specific
+__pycache__/
+*.pyc
+*.pyd
+.python-version
+env/
+venv/
+*.egg-info
+build/
+dist/
+
+# Flask-specific (sensitive information)
+instance/  # If you're using instance folders for config
+.flaskenv
+*.session  # If your app uses file-based sessions and you don't want to track them
+# <your_flask_secret_key_file.txt> # If you store your secret key in a separate file
+
+# Data and Model files (especially large ones or those generated)
+data/processed/*.csv  # Ignore processed data if you regenerate it
+outputs/models/*.pth   # Ignore your trained model weights (optional, but often done for large models)
+uploads/              # Ignore uploaded files if they are temporary
+*.log                 # Ignore log files
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor/IDE-specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+
+# Other temporary files or directories
+tmp/
+temp/
+tmp.*
+*.tmp
+
+data/raw/fashion-dataset

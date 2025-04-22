@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .results {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: left;
+        }
+        .prediction {
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <div class="results">
+        {% if predictions.error %}
+            <p class="error">Error: {{ predictions.error }}</p>
+        {% else %}
+            <p class="prediction"><strong>Base Colour:</strong> {{ predictions.baseColour }}</p>
+            <p class="prediction"><strong>Article Type:</strong> {{ predictions.articleType }}</p>
+            <p class="prediction"><strong>Season:</strong> {{ predictions.season }}</p>
+            <p class="prediction"><strong>Gender:</strong> {{ predictions.gender }}</p>
+        {% endif %}
+    </div>
+    <a href="{{ url_for('upload_form') }}">Upload Another Image</a>
+</body>
+</html>
